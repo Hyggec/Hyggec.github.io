@@ -31,16 +31,6 @@
   
   
   <title>Hello World - Hyggec&#39;s Blog</title>
-  
-    <script type="text/javascript">
-    //只在桌面版网页启用特效
-    var windowWidth = $(window).width();
-    if (windowWidth > 768) {
-        document.write('<script type="text/javascript" src="/js/sakura.js"></script>');
-    }
-    </script>
-
-
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
@@ -119,8 +109,8 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
 
+  
 
 <body>
   
@@ -762,3 +752,11 @@ setInterval("createtime()", 250);
   </noscript>
 </body>
 </html>
+<script type="text/javascript">
+  //只在桌面版网页启用特效
+  var windowWidth = $(window).width();
+  if (windowWidth > 768) {
+      document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+  }
+  </script>
+  
