@@ -16,20 +16,30 @@
   <meta name="author" content="Hyggec">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://hyggec.github.io/archives/2023/09/index.html">
+    <meta name="description" content="今天在看Leetcode算法书的时候看到一个函数，不是很理解，在这里记录一下。sort(intervals.begin(), intervals.end(), [](vector a, vector b) {          return a[1] &lt; b[1];       }); 这里的interval是一个二维的向量。开始对[](vector a, vector b）{…}不是很了解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda函数">
+<meta property="og:url" content="http://hyggec.github.io/2023/09/17/Lambda%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hyggec&#39;s Blog">
+<meta property="og:description" content="今天在看Leetcode算法书的时候看到一个函数，不是很理解，在这里记录一下。sort(intervals.begin(), intervals.end(), [](vector a, vector b) {          return a[1] &lt; b[1];       }); 这里的interval是一个二维的向量。开始对[](vector a, vector b）{…}不是很了解">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-17T08:02:59.000Z">
+<meta property="article:modified_time" content="2023-09-17T10:43:20.106Z">
 <meta property="article:author" content="Hyggec">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - Hyggec&#39;s Blog</title>
+  <title>Lambda函数 - Hyggec&#39;s Blog</title>
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -108,7 +118,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -214,9 +224,57 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="Lambda函数"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-17 16:02" pubdate>
+          2023年9月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
 
         
       </div>
@@ -232,52 +290,170 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 5 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2023</p>
-    
-    <a href="/2023/09/17/Lambda%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <time>09-17</time>
-      <div class="list-group-item-title">Lambda函数</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Lambda函数</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>今天在看Leetcode算法书的时候看到一个函数，不是很理解，在这里记录一下。<br>sort(intervals.begin(), intervals.end(), [](vector<int> a, vector<int> b) {<br>          return a[1] &lt; b[1];<br>       });</p>
+<p>这里的interval是一个二维的向量。开始对[](vector a, vector b）{…}不是很了解，取网上查了下资料。</p>
+<p>了解到”[]”是表示Lambda函数用于限制参数范围的符号，是必须存在的。具体可以参见</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42887343/article/details/122099296?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169493063416800185844522%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169493063416800185844522&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-122099296-null-null.142%5Ev94%5Einsert_down1&utm_term=Lambda%E5%87%BD%E6%95%B0&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_42887343/article/details/122099296?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169493063416800185844522%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=169493063416800185844522&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-122099296-null-null.142^v94^insert_down1&amp;utm_term=Lambda%E5%87%BD%E6%95%B0&amp;spm=1018.2226.3001.4187</a></p>
+<p>而后面的“(vector a, vector b)”则是为了取出二位向量的每一行。<br>举一个例子。</p>
+<p>vector<int> a&#x3D;{1,8,3,2,5};<br>    sort(a.begin(), a.end(), [](int a, int b) {<br>        return a &lt; b;<br>    });<br>    for(int i&#x3D;0;i&lt;a.size();i++) cout&lt;&lt;a[i]&lt;&lt;endl;</p>
+<p>这里很容易想到是取出数组内的每个元素。相当于是给数组的最外层”[]”脱掉了。那么二维数组脱掉【】就变成了一维数组，也就是每一行。所以这里就是以每一行的第二个元素进行升序排序。</p>
+<p>sort(points.begin(),points.end(),[](vector<int>&amp; a,vector<int>&amp;b)<br>sort(intervals.begin(), intervals.end(), [](vector<int> a, vector<int> b) </p>
+<p>两个sort函数的区别是第一个使用了引用传递，而第二个使用了值传递。引用传递的优点是可以避免复制对象，节省内存和时间。值传递的缺点是每次比较时都要复制对象，增加内存和时间开销。所以第一个运行会快一点。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-    
-    <a href="/2023/09/10/%E6%96%87%E7%AB%A01/" class="list-group-item list-group-item-action">
-      <time>09-10</time>
-      <div class="list-group-item-title">文章1</div>
-    </a>
   
-    
-    <a href="/2023/09/08/hello-world/" class="list-group-item list-group-item-action">
-      <time>09-08</time>
-      <div class="list-group-item-title">Hello World</div>
-    </a>
+</div>
+
+
+              
   
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Lambda函数</div>
+      <div>http://hyggec.github.io/2023/09/17/Lambda函数/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Hyggec</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/11/12/%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2/" title="登陆页面">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">登陆页面</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/10/%E6%96%87%E7%AB%A01/" title="文章1">
+                        <span class="hidden-mobile">文章1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -433,6 +609,99 @@ setInterval("createtime()", 250);
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script defer src="/js/leancloud.js" ></script>
 

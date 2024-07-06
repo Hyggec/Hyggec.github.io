@@ -4,6 +4,45 @@
   
   
   <entry>
+    <title>文章上传</title>
+    <link href="/2024/07/06/%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0/"/>
+    <url>/2024/07/06/%E6%96%87%E7%AB%A0%E4%B8%8A%E4%BC%A0/</url>
+    
+    <content type="html"><![CDATA[<p>在Blog根目录下选择</p><p>新建文章</p><p>输入命令：hexo new “文章名称”</p><p>然后根据返回的地址即可找到创建的文件位置，即可使用编辑器打开编辑（推荐使用vscode或者typora）</p><p>预览</p><p>输入命令（blog目录下使用git）：hexo s（如上）</p><p>确认无误后先生成一遍文件</p><p>输入命令（blog目录下使用git）：hexo g</p><p>之后即可部署到GitHub</p><p>输入命令（blog目录下使用git）：hexo d</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>登陆页面</title>
+    <link href="/2023/11/12/%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2/"/>
+    <url>/2023/11/12/%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2/</url>
+    
+    <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>登陆</title></head><style>  .content{       width:device-width;      height:device-height;       position: relative;  <p>  .box{<br>      width:20%;<br>      height:50%;<br>      position: absolute;<br>      top:0;<br>      left:0;<br>      right:0;<br>      bottom:0;<br>      margin:auto;<br>  }<br></style></p></head><body><div class="content">  <div class="box" id="app"><pre><code class="hljs">账号：&lt;input type=&quot;text&quot; v-model.trim=&quot;username&quot;&gt; &lt;br&gt;&lt;br&gt;密码：&lt;input type=&quot;password&quot; v-model=&quot;password&quot;&gt; &lt;br&gt;&lt;br&gt;&lt;button @click=&quot;login&quot;&gt;登录&lt;/button&gt;&lt;button @click=&quot;reset&quot;&gt;重置&lt;/button&gt;</code></pre>  </div></div>  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>  <script>    const app = new Vue({      el: '#app',      data: {        username: '',        password: ''      },      methods: {        login () {          console.log(this.username, this.password)          alert("登陆成功！")        },        reset () {          this.username = ''          this.password = ''        }      }    })  </script></body></html>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Lambda函数</title>
+    <link href="/2023/09/17/Lambda%E5%87%BD%E6%95%B0/"/>
+    <url>/2023/09/17/Lambda%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<p>今天在看Leetcode算法书的时候看到一个函数，不是很理解，在这里记录一下。<br>sort(intervals.begin(), intervals.end(), [](vector<int> a, vector<int> b) {<br>          return a[1] &lt; b[1];<br>       });</p><p>这里的interval是一个二维的向量。开始对[](vector a, vector b）{…}不是很了解，取网上查了下资料。</p><p>了解到”[]”是表示Lambda函数用于限制参数范围的符号，是必须存在的。具体可以参见</p><p><a href="https://blog.csdn.net/weixin_42887343/article/details/122099296?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169493063416800185844522%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169493063416800185844522&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-122099296-null-null.142%5Ev94%5Einsert_down1&utm_term=Lambda%E5%87%BD%E6%95%B0&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_42887343/article/details/122099296?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169493063416800185844522%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=169493063416800185844522&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-122099296-null-null.142^v94^insert_down1&amp;utm_term=Lambda%E5%87%BD%E6%95%B0&amp;spm=1018.2226.3001.4187</a></p><p>而后面的“(vector a, vector b)”则是为了取出二位向量的每一行。<br>举一个例子。</p><p>vector<int> a&#x3D;{1,8,3,2,5};<br>    sort(a.begin(), a.end(), [](int a, int b) {<br>        return a &lt; b;<br>    });<br>    for(int i&#x3D;0;i&lt;a.size();i++) cout&lt;&lt;a[i]&lt;&lt;endl;</p><p>这里很容易想到是取出数组内的每个元素。相当于是给数组的最外层”[]”脱掉了。那么二维数组脱掉【】就变成了一维数组，也就是每一行。所以这里就是以每一行的第二个元素进行升序排序。</p><p>sort(points.begin(),points.end(),[](vector<int>&amp; a,vector<int>&amp;b)<br>sort(intervals.begin(), intervals.end(), [](vector<int> a, vector<int> b) </p><p>两个sort函数的区别是第一个使用了引用传递，而第二个使用了值传递。引用传递的优点是可以避免复制对象，节省内存和时间。值传递的缺点是每次比较时都要复制对象，增加内存和时间开销。所以第一个运行会快一点。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>文章1</title>
     <link href="/2023/09/10/%E6%96%87%E7%AB%A01/"/>
     <url>/2023/09/10/%E6%96%87%E7%AB%A01/</url>
